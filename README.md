@@ -26,8 +26,7 @@ This program takes a CSV file with the seed website URLs and outputs it into ano
 
 Command syntax: 
 ```
-python3 read_seed.py --csv=your/directory/Collection-seed-list.csv --db=urls.db --out=current_urls.csv --ext=1234
---name="Collection Name" --sort
+python3 read_seed.py --csv=your/directory/Collection-seed-list.csv --db=urls.db --out=current_urls.csv --ext=1234 --name="Collection Name" --sort
 ```
 Arguments:
 * csv - The CSV file with the seed URLs. Interchangeable with --db as only one type of input is allowed.
@@ -43,7 +42,11 @@ This program takes the CSV or DB from the previous program and gets the Archive-
 
 Command syntax: 
 ```
-python3 create_archive_urls.py --csv=current_urls.csv --db=urls.db --out=archive_urls.csv --banner
+python3 create_archive_urls.py --csv=current_urls.csv --out=archive_urls.csv --banner
+```
+Or
+```
+python3 create_archive_urls.py --db=urls.db --out=archive_urls.csv --banner
 ```
 Arguments:
 * csv - Input CSV file with current URLs. Interchangeable with --db as only one type of input is allowed.
@@ -58,7 +61,11 @@ This program outputs a CSV file which maps the current and archive URLs with the
 
 Command syntax:
 ```
-python3 get_file_names.py --currcsv=current_index/ --archcsv=archive_index/ --db=urls.db --out=file_names.csv --print
+python3 get_file_names.py --currcsv=current_index/ --archcsv=archive_index/ --out=file_names.csv --print
+```
+Or
+```
+python3 get_file_names.py --db=urls.db --out=file_names.csv --print
 ```
 Arguments:
 * currcsv - The CSV file with the current URLs index.
@@ -83,7 +90,11 @@ The output CSV file containing the network requests of the current/archive URLs 
 
 Command syntax:
 ```
-python3 extract_network_requests.py --csv=current_urls.csv --db=urls.db --csvout=current_requests/ --index=extraction_status.csv --timeout=30 --archive
+python3 extract_network_requests.py --csv=current_urls.csv --csvout=current_requests/ --index=extraction_status.csv --timeout=30 --archive
+```
+Or
+```
+python3 extract_network_requests.py --db=urls.db --csvout=current_requests/ --index=extraction_status.csv --timeout=30 --archive
 ```
 Arguments:
 * csv - Input CSV file with current/archive URLs. Interchangable with --db as only one type of input is allowed.
