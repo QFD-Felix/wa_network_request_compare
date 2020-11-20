@@ -54,27 +54,6 @@ Arguments:
 * out - The CSV file to write the URLs.
 * banner - (optional) Include to generate URLs that has the banner, default removes banner.
 
-
-### get_file_names.py
-This program outputs a CSV file which maps the current and archive URLs with their respective network request CSV files.
-> The output CSV will have four columns, current URl, archive URL, current network requests file name, archive network requests file name.
-
-Command syntax:
-```
-python3 get_file_names.py --currcsv=current_index/ --archcsv=archive_index/ --out=file_names.csv --print
-```
-Or
-```
-python3 get_file_names.py --db=urls.db --out=file_names.csv --print
-```
-Arguments:
-* currcsv - The CSV file with the current URLs index.
-* archcsv - The CSV file with the archive URLs index.
-* db - Input DB file with urls. Interchangeable with using --currcsv and --archcsv since only one type of input is allowed. 
-* out - The CSV file to write the urls and file names. 
-* print - (optional) Include to print urls and file names to stdout, default doesn't print.
-
-
 ### extract_network_requests.py
 This program outputs two CSV files, one with the extraction status of the current/archive URLs, and the other with the network requests for the current/archive URLs.
 
